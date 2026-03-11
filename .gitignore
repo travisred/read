@@ -1,3 +1,5 @@
 CLAUDE.md
 .DS_Store
 log.txt
+db/*
+*.php
