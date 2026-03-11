@@ -76,7 +76,7 @@ $html = '<!DOCTYPE html>
     </style>
 </head>
 <body>
-<a href="' . htmlspecialchars('/read/docs/' . date('Y-m-d', strtotime('-1 day')) . '.html') . '">Yesterday</a> - <a href="/read/docs">Today</a>
+<a href="' . htmlspecialchars('/read/' . date('Y-m-d', strtotime('-1 day')) . '.html') . '">Yesterday</a> - <a href="/read">Today</a>
 ';
 
 $site_last = '';
