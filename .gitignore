@@ -1,5 +1,5 @@
 CLAUDE.md
 .DS_Store
 log.txt
-db/*
+*.db
 *.php
