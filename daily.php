@@ -54,7 +54,7 @@ foreach ($feeds as $site => $feed) {
 
 // --- Output unread items to daily HTML ---
 $date = date('Y-m-d');
-$dailyDir = __DIR__ . '/daily';
+$dailyDir = __DIR__ . '/docs';
 if (!is_dir($dailyDir)) {
     mkdir($dailyDir, 0775, true);
 }
@@ -76,7 +76,7 @@ $html = '<!DOCTYPE html>
     </style>
 </head>
 <body>
-<a href="' . htmlspecialchars(__DIR__ . '/daily/' . date('Y-m-d', strtotime('-1 day')) . '.html') . '">Yesterday</a> - <a href="' . htmlspecialchars($outFile) . '">Today</a>
+<a href="' . htmlspecialchars(__DIR__ . '/docs/' . date('Y-m-d', strtotime('-1 day')) . '.html') . '">Yesterday</a> - <a href="' . htmlspecialchars($outFile) . '">Today</a>
 ';
 
 $site_last = '';
