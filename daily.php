@@ -72,8 +72,7 @@ $html = '<!DOCTYPE html>
     <meta charset="UTF-8">
     <title>Daily RSS - ' . $date . '</title>
     <style>
-        html { font-size: 20px; }
-        body { max-width: 800px; margin: 0 auto; padding: 1em; }
+        html { font-size: 20px; width: 100%; }
     </style>
 </head>
 <body>
