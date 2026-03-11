@@ -59,6 +59,7 @@ if (!is_dir($dailyDir)) {
     mkdir($dailyDir, 0775, true);
 }
 $outFile = $dailyDir . '/' . $date . '.html';
+$indexFile = $dailyDir . '/index.html';
 
 $stmt = $pdo->prepare("SELECT * FROM rss WHERE is_read = 0 ORDER BY site, id DESC");
 $stmt->execute();
@@ -76,7 +77,7 @@ $html = '<!DOCTYPE html>
     </style>
 </head>
 <body>
-<a href="' . htmlspecialchars(__DIR__ . '/docs/' . date('Y-m-d', strtotime('-1 day')) . '.html') . '">Yesterday</a> - <a href="' . htmlspecialchars($outFile) . '">Today</a>
+<a href="' . htmlspecialchars('/read/docs/' . date('Y-m-d', strtotime('-1 day')) . '.html') . '">Yesterday</a> - <a href="/read/docs">Today</a>
 ';
 
 $site_last = '';
@@ -96,6 +97,7 @@ $html .= '</body>
 </html>';
 
 file_put_contents($outFile, $html);
+file_put_contents($indexFile, $html);
 fwrite($log, date('Y-m-d H:i:s') . ": Wrote " . count($rows) . " items to $outFile\n");
 
 // --- Mark as read ---
